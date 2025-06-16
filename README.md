@@ -24,7 +24,7 @@ Click on any topic below to jump directly to the detailed section:
 
 ---
 
-## **1. Introduction & Setup**
+## Introduction & Setup
 
 ### **What is Olama UI?**
 Olama UI is a cutting-edge user interface built for managing large language models (LLMs), workflows, and AI-powered applications. It provides flexibility, scalability, and modularity, enabling you to quickly prototype, deploy, and manage AI-powered solutions. Designed to cater to both individual users and teams, Olama UI supports a variety of real-world applications ranging from customer service automation to data-driven insights generation.
@@ -126,11 +126,8 @@ Run your first task, navigate the interface, and verify that models and tools ar
 
 ---
 
-Here’s the expanded version of **2. Getting Started with Ollama** with examples and practical exercises.
 
----
-
-## **2. Getting Started with Ollama**
+## Getting Started with Ollama
 
 ### **Overview of the Ollama Ecosystem**
 The Ollama ecosystem is built around managing and deploying state-of-the-art language models, enabling workflows ranging from simple chat applications to complex, multi-step pipelines. Ollama is especially known for its focus on modularity, flexibility, and ease of use.

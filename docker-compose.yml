@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ~/ollama/models:/root/.ollama/models
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    restart: unless-stopped
+    # Uncomment if you have NVIDIA GPU
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  # Optional: Web interface for Ollama
+  ollama-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: ollama_webui
+    ports:
+      - "5000:8080"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+    depends_on:
+      - ollama
+    volumes:
+      - ollama_webui_data:/app/backend/data
+    restart: unless-stopped
+
+networks:
+  crewai_network:
+    driver: bridge
+
+volumes:
+  ollama_data:
+  ollama_webui_data:
